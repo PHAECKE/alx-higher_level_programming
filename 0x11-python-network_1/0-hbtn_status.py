@@ -1,16 +1,11 @@
 #!/usr/bin/python3
-"""A script that
-- fetches https://intranet.hbtn.io/status.
-- uses urlib package
-"""
-
+""" code to fetch data """
+from urllib import request
 
 if __name__ == '__main__':
-    import urllib.request
-
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as res:
-        content = res.read()
+    url = 'https://alx-intranet.hbtn.io/status'
+    with request.urlopen(url) as response:
         print("Body response:")
-        print("\t- type: {}".format(type(content)))
-        print("\t- content: {}".format(content))
-        print("\t- utf8 content: {}".format(content.decode('utf-8')))
+        page = response.read()
+        data = '\t- type: {}\n\t- content: {}\n\t- utf8 content: {}'
+        print(data.format(type(page), page, page.decode('UTF-8')))
