@@ -1,1 +1,1 @@
-this project is on python hello world
+this project is for pyhon hello world
